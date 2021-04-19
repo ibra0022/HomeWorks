@@ -7,18 +7,16 @@ namespace NumMatch
     {
         public static bool match(string numbers)
         {
-            Stack<char> myStack = new Stack<char>();
-            List<char> myList = new List<char>();
+            //Stack<char> myStack = new Stack<char>(); 
+            
             int[] myArray = new int[10];
 
-            string res = numbers;
+            //string res = numbers;
 
-            //bool result = false;
 
             foreach(var ch in numbers)
             {
-                /* myStack.Push(ch);
-                 myList.Add(ch);*/
+                //myStack.Push(ch);
 
                 int index = (int)Char.GetNumericValue(ch);
                 myArray[index]++;
@@ -26,6 +24,7 @@ namespace NumMatch
             foreach(var num in myArray)
             {
                 //res += myStack.Pop();
+
                 if(num % 2 == 1)
                 {
                     return false;
