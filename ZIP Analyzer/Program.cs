@@ -48,17 +48,136 @@ namespace FilreReadWrite
                     Console.WriteLine("Version: " + Version[1] + " " + Version[0]);
                 }
 
-                if(GP[0] == 0 && GP[1] == 0)
+                switch (GP[1])
                 {
-                    
-                    Console.WriteLine("it is encrypted file");
-                    Console.WriteLine("GP: " + GP[0] + " " + GP[1]);
+                    case 0:
+                        switch (GP[0])
+                        {
+                            case 0:
+                                Console.WriteLine("it is encrypted file");
+                                break;
+                            case 1:
+                                Console.WriteLine("it is compression option file");
+                                break;
+                            case 2:
+                                Console.WriteLine("it is compression option file");
+                                break;
+                            case 3:
+                                Console.WriteLine("it is data descriptor file");
+                                break;
+                            case 4:
+                                Console.WriteLine("it is enhanced deflation file");
+                                break;
+                            case 5:
+                                Console.WriteLine("it is compressed patched data file");
+                                break;
+                            case 6:
+                                Console.WriteLine("it is strong encryption file");
+                                break;
+                            default:
+                                Console.WriteLine("it is encrypted file");
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch (GP[0])
+                        {
+                            case 1:
+                                Console.WriteLine("it is language encoding ");
+                                break;
+                            case 2:
+                                Console.WriteLine("it is reserved ");
+                                break;
+                            case 3:
+                                Console.WriteLine("it is mask header values");
+                                break;
+                            case 4:
+                                Console.WriteLine("it is reserved");
+                                break;
+                            case 5:
+                                Console.WriteLine("it is reserved");
+                                break;
+                            default:
+                                Console.WriteLine("it is encrypted file");
+                                break;
+                        }
+                        break;
+
                 }
 
-                if (compressionMethod[0] == 8 && compressionMethod[1] == 0)
+                switch (compressionMethod[1])
                 {
-                    Console.WriteLine("the compression method is deflated");
-                    Console.WriteLine("compressionMethod: " + compressionMethod[0] + " " + compressionMethod[1] );
+                    case 0:
+                        switch (compressionMethod[0])
+                        {
+                            case 0:
+                                Console.WriteLine("no compression");
+                                break;
+                            case 1:
+                                Console.WriteLine("shrunk");
+                                break;
+                            case 2:
+                                Console.WriteLine("reduced with compression factor 1");
+                                break;
+                            case 3:
+                                Console.WriteLine("reduced with compression factor 2");
+                                break;
+                            case 4:
+                                Console.WriteLine("reduced with compression factor 3");
+                                break;
+                            case 5:
+                                Console.WriteLine("reduced with compression factor 4");
+                                break;
+                            case 6:
+                                Console.WriteLine("imploded");
+                                break;
+                            case 7:
+                                Console.WriteLine("reserved");
+                                break;
+                            case 8:
+                                Console.WriteLine("deflated");
+                                break;
+                            case 9:
+                                Console.WriteLine("enhanced deflated");
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch (compressionMethod[0])
+                        {
+                            case 0:
+                                Console.WriteLine("PKWare DCL imploded");
+                                break;
+                            case 1:
+                                Console.WriteLine("reserved");
+                                break;
+                            case 2:
+                                Console.WriteLine(" compressed using BZIP2");
+                                break;
+                            case 3:
+                                Console.WriteLine("reserved");
+                                break;
+                            case 4:
+                                Console.WriteLine("LZMA");
+                                break;
+                            case 5:
+                                Console.WriteLine("reserved");
+                                break;
+                            case 6:
+                                Console.WriteLine("reserved");
+                                break;
+                            case 7:
+                                Console.WriteLine("reserved");
+                                break;
+                            case 8:
+                                Console.WriteLine("compressed using IBM TERSE");
+                                break;
+                            case 9:
+                                Console.WriteLine("IBM LZ77 z");
+                                break;
+                        }
+                        break;
+
                 }
 
                 
